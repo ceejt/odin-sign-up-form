@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Skranji:wght@700&display=swap");
+
+:root {
+  --primary-green: #596d48;
+  --border-light: #e5e7eb;
+  --border-focus: #3b82f6;
+  --border-invalid: #dc2626;
+  --shadow-focus: rgba(59, 130, 246, 0.1);
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --bg-white: #ffffff;
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.image-sidebar {
+  flex: 0 0 40%;
+  background-image: url("bg-img.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 30vh;
+  padding: 1.5rem;
+  background-color: var(--overlay-dark);
+}
+
+.logo-icon {
+  width: 100px;
+  height: 120px;
+}
+
+.logo-text {
+  font-family: "Skranji", system-ui;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--bg-white);
+  letter-spacing: 0.1em;
+}
+
+.image-credit {
+  padding: 1rem;
+  text-align: center;
+  color: var(--bg-white);
+  font-size: 0.875rem;
+}
+
+.image-credit a {
+  color: var(--bg-white);
+  text-decoration: none;
+}
+
+.image-credit a:hover {
+  text-decoration: underline;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background-color: #f9fafb;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.intro-text em {
+  font-style: normal;
+}
+
+.form-container {
+  background-color: var(--bg-white);
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.form-group input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--shadow-focus);
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+  border-color: var(--border-invalid);
+}
+
+.form-group input[type="password"]:invalid {
+  border-color: var(--border-invalid);
+}
+
+.error-message {
+  font-size: 0.75rem;
+  color: var(--border-invalid);
+  margin-top: 0.25rem;
+  min-height: 1rem;
+}
+
+.submit-section {
+  padding: 2rem;
+}
+
+.submit-btn {
+  background-color: var(--primary-green);
+  color: var(--bg-white);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.875rem 3rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+  background-color: #4a5c3a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-text {
+  margin-top: 1.5rem;
+  color: var(--text-dark);
+}
+
+.login-link {
+  color: var(--primary-green);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .image-sidebar {
+    flex: 0 0 200px;
+  }
+
+  .logo-banner {
+    margin-top: 5vh;
+  }
+
+  .logo-text {
+    font-size: 2.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

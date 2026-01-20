@@ -3,17 +3,78 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ODIN</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div>
-        <label for="username"> What's your name?</label>
-        <input type="text" id="username">
-        <button class="greet-btn">Greet me</button>
+    <div class="container">
+        <aside class="image-sidebar">
+            <div class="logo-banner">
+                <img src="odin-logo.png" alt="Odin Logo" class="logo-icon">
+                <h1 class="logo-text">ODIN</h1>
+            </div>
+            <p class="image-credit">Photo by <a
+                    href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA"
+                    target="_blank">Hailie West</a> on <a href="https://unsplash.com" target="_blank">Unsplash</a></p>
+        </aside>
+
+        <main class="form-section">
+            <div class="form-wrapper">
+                <section class="intro">
+                    <p class="intro-text">This is not a real online service! You know you need something like this in
+                        your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+                    <p class="intro-text">You <em>know</em> you want to.</p>
+                </section>
+
+                <section class="form-container">
+                    <h2 class="form-title">Let's do this!</h2>
+                    <form id="signupForm" novalidate>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{10,}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required minlength="8">
+                                <span class="error-message" id="passwordError"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm Password</label>
+                                <input type="password" id="confirmPassword" name="confirmPassword" required
+                                    minlength="8">
+                                <span class="error-message" id="confirmPasswordError"></span>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="submit-section">
+                    <button type="submit" form="signupForm" class="submit-btn">Create Account</button>
+                    <p class="login-text">Already have an account? <a href="#" class="login-link">Log in</a></p>
+                </section>
+            </div>
+        </main>
     </div>
-    <h1 class="greeting"></h1>
 
     <script src="script.js"></script>
 </body>
